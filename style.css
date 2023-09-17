@@ -56,6 +56,7 @@ img {
 .card {
     width: 25.16em; 
     border-radius: 10px;
+    background: white;
 }
 
 .card-image {
@@ -77,7 +78,7 @@ img {
 .card-user {
     position: relative;
     width: 100%;
-    padding: 20px 0;
+    padding: 0px 0;
     display: flex;
     justify-content: space-between;
     align-items:center;
@@ -102,3 +103,110 @@ img {
 .user-info > p:last-child {
     font-weight: 100;
 }
+
+.icon-share {
+    position: relative;
+    z-index: 5;
+    background: var(--light-grayish-blue);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.icon-share:hover .i-share{
+    fill: var(--light-grayish-blue);  
+    animation: shareAnimation .2s linear;
+}
+
+@keyframes shareAnimation {
+    from {}
+    to {
+        transform: translateX(1px);
+    }
+}
+
+.icon-share:hover {
+    background: var(--very-dark-grayish-blue);
+    transition: background 100ms linear ;
+}
+
+.network {
+    position: absolute;
+    top: 5px;
+    left: -32px;
+    width: 25rem;
+    height: 75px;
+    padding: 2rem;
+    border-radius: 0 0 10px 10px;
+    background: var(--very-dark-grayish-blue);
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.network p {
+    font-size: 1.3rem;
+    font-weight: 100;
+    color: var(--grayish-blue);
+    margin-right: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.icons-network a svg{
+    font-size: 1.7rem;
+    margin: auto 0.7rem;
+}
+
+
+@media(min-width: 1024px) {
+     
+    .card {
+        width: 730px;
+        height: 280px;
+        display: flex;
+        background: white;
+    }
+
+    .card-image {
+        overflow: hidden;
+        flex: 1 0 285px;
+              /* 
+              flex-grow flex-shrink flex-basis
+              */
+        height: 100%;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .card-image > img {
+        width: 120%;
+    }
+    
+    .card-user {
+        margin-bottom: 100px;
+    }
+    .network {
+        width:22rem;
+        height: 50px;
+        top: -60px;
+        left: 59%;
+        border-radius: 10px;
+        justify-content: center;
+    }
+
+    .network::after {
+        content: '';
+        position: absolute;
+        top: 52px;
+        display: block;
+        border-width: 15px;
+        border-style: solid;
+        border-color: var(--very-dark-grayish-blue) transparent transparent;
+    }
+
+}
+
+
+
+
